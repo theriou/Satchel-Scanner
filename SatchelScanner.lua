@@ -259,7 +259,7 @@ function SS_SetupCoreFrame() -- Will be used for minimalist option later.
 	end)
 	SatchelScannerDisplayWindow:SetWidth(260);
 	SatchelScannerDisplayWindow:SetHeight(60);
-	SatchelScannerDisplayWindow:SetFrameStrata("LOW")
+	SatchelScannerDisplayWindow:SetFrameStrata("BACKGROUND")
 	for i, tVar in pairs(SS_CoreFrameTable) do
 		if string.find(i, "Button") then
 			_G[i] = CreateFrame("Button", nil, SatchelScannerDisplayWindow, UIPanelButtonTemplate, BackdropTemplateMixin and "BackdropTemplate");
