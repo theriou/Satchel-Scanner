@@ -1,0 +1,12 @@
+## Interface: 90001
+## Title: |cFF0080FFSatchelScanner|r
+## Notes: Scans for Satchels found within the LFD/LFR frame.
+## Version: 9.0.1
+## Author: Exzu
+## SavedVariablesPerCharacter: SatchelScannerDB
+
+SatchelScanner.lua
+SS_config.lua
+SS_variables.lua
+SS_dungeons.lua
+SatchelScanner.xml
