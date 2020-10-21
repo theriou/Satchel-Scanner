@@ -2,7 +2,7 @@
 ## Title: |cFF0080FFSatchelScanner|r
 ## Notes: Scans for Satchels found within the LFD/LFR frame.
 ## Version: 9.0.1
-## Author: Exzu
+## Author: Exzu, Theriou
 ## SavedVariablesPerCharacter: SatchelScannerDB
 
 SatchelScanner.lua
