@@ -230,7 +230,7 @@ function SS_SetupCoreFrame() -- Will be used for minimalist option later.
 	edgeFile = SS_Border,
 	tile = true,
 	tileEdge = true,
-	tileSize = 8,
+	tileSize = 12,
 	edgeSize = 8,
 	insets = { left = 0, right = 0, top = 0, bottom = 0 },
 	});
@@ -259,7 +259,7 @@ function SS_SetupCoreFrame() -- Will be used for minimalist option later.
 	end)
 	SatchelScannerDisplayWindow:SetWidth(260);
 	SatchelScannerDisplayWindow:SetHeight(60);
-	SatchelScannerDisplayWindow:SetFrameStrata("BACKGROUND")
+	SatchelScannerDisplayWindow:SetFrameStrata("LOW")
 	for i, tVar in pairs(SS_CoreFrameTable) do
 		if string.find(i, "Button") then
 			_G[i] = CreateFrame("Button", nil, SatchelScannerDisplayWindow, UIPanelButtonTemplate, BackdropTemplateMixin and "BackdropTemplate");
