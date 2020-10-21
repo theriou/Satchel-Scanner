@@ -225,6 +225,16 @@ end
 -- Called after Interface Panels have been setup
 function SS_SetupCoreFrame() -- Will be used for minimalist option later.
 	SatchelScannerDisplayWindow = CreateFrame("Frame", "SatchelFrame", UIParent, BackdropTemplateMixin and "BackdropTemplate")
+	SatchelScannerDisplayWindow:SetBackdrop({
+	bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
+	edgeFile = SS_Border,
+	tile = true,
+	tileEdge = true,
+	tileSize = 8,
+	edgeSize = 8,
+	insets = { left = 0, right = 0, top = 0, bottom = 0 },
+	});
+	SatchelScannerDisplayWindow:SetBackdropColor(0, 0, 0, 0.8);
 	SatchelScannerDisplayWindow:SetMovable(true)
 	SatchelScannerDisplayWindow:EnableMouse(true)
 	SatchelScannerDisplayWindow:SetScript("OnMouseDown", function(self, button)
