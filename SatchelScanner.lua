@@ -415,7 +415,9 @@ function SatchelScanner_OnLoad(self)
 			SS_satchelsReceived = SatchelScannerDB["satchels"];
 			SS_datacall("reset");
 		elseif msg == "bagcounter" then
-			if string.find(arg1, "reset") then
+			if(arg1 == nil) then
+				SS_printmm("Proper Usage: '/ss3 bagcounter X' where X is a number or '/ss3 bagcounter reset'");
+			elseif string.find(arg1, "reset") then
 				SS_satchelsReceived = 0;
 				SS_datacall("update");
 			elseif (tonumber(arg1) and math.floor(arg1) and not string.find(arg1, "-")) then
