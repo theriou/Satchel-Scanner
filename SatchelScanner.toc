@@ -1,7 +1,7 @@
-## Interface: 90001
+## Interface: 90002
 ## Title: |cFF0080FFSatchelScanner|r
 ## Notes: Scans for Satchels found within the LFD/LFR frame.
-## Version: 9.0.1
+## Version: 9.0.2
 ## Author: Exzu, Theriou
 ## SavedVariablesPerCharacter: SatchelScannerDB
 
