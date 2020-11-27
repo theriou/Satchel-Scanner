@@ -428,8 +428,6 @@ function SatchelScanner_OnLoad(self)
 				else
 					SS_printmm("You cannot set a number higher than 99'999 or lower than 0");
 				end
-			else
-				SS_printmm("Proper Usage: '/ss3 bagcounter X' where X is a number or '/ss3 bagcounter reset'");
 			end
 		elseif msg == "config" then
 			InterfaceOptionsFrame_OpenToCategory(SS_Globals.options);

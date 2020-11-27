@@ -37,7 +37,7 @@ SS_optionsTable2 = {
 		SS_Spacer5 = { loc = "TOP", x = 0, y = -45, width = "0" , height = "2", texture = SS_Spacer},
 		-- BoxText
 		SS_optionText1 = { loc = "TOPLEFT", x = 10, y = -50, fontSize = 16, text = "|cffff0000Scan Options|r"},
-		SS_optionText2 = { loc = "TOPLEFT", x = 30, y = -70, fontSize = 14, text = "Scan while in a Instance"},
+		SS_optionText2 = { loc = "TOPLEFT", x = 30, y = -70, fontSize = 14, text = "Scan while in an Instance"},
 		SS_optionText3 = { loc = "TOPLEFT", x = 30, y = -90, fontSize = 14, text = "Scan while in a Group"},
 		SS_optionText4 = { loc = "TOPLEFT", x = 250, y = -70, fontSize = 14, text = "Disable gear check"},
 		SS_optionText5 = { loc = "TOPLEFT", x = 250, y = -90, fontSize = 14, text = "Disable class check"},
@@ -66,18 +66,18 @@ SS_optionsTable2 = {
 	};
 	[3] = { parent = "instances", pname = "Instances", frame = "SS_ScannerInstances",
 		SS_InstanceSpacer10 = { loc = "TOP", x = 0, y = -45, width = "0" , height = "2", texture = SS_Spacer},
-		SS_InstanceSpacer11 = { loc = "TOP", x = 0, y = -130, width = "0" , height = "2", texture = SS_Spacer},
+		SS_InstanceSpacer11 = { loc = "TOP", x = 0, y = -114, width = "0" , height = "2", texture = SS_Spacer},
 		SS_InstanceTextHeader = { fontSize = 24, loc = "TOP", x = 0, y = -5, text = "|cFF0080FFSatchel Scanner|r"},
 		SS_InstanceTextSubHeader = { fontSize = 18, loc = "TOP", x = 0, y = -25, text = "|cffff0000Instance Options|r"},
-		SS_InstancetankIconText = { text = "Tank", loc = "TOP", x = -148, y = -110, fontSize = 14},
-		SS_InstancehealIconText = { text = "Heal", loc = "TOP", x = 2, y = -110, fontSize = 14},
-		SS_InstancedpsIconText = { text = "Dps", loc = "TOP", x = 152, y = -110, fontSize = 14},
-		SS_InstancetankBigIcon = { loc = "TOP", x = -150, y = -50, width = "64", height = "64", texture = SS_TankTexture},
-		SS_InstancehealBigIcon = { loc = "TOP", x = 0, y = -50, width = "64", height = "64", texture = SS_HealTexture},
-		SS_InstancedpsBigIcon = { loc = "TOP", x = 150, y = -50, width = "64", height = "64", texture = SS_DpsTexture},
-		SS_InstanceRandomDungeonText = { text = "|cffff0000Random Dungeons|r", loc = "TOP", x = 0, y = -135, fontSize = 14},
+		SS_InstancetankIconText = { text = "Tank", loc = "TOP", x = -73, y = -94, fontSize = 14},
+		SS_InstancehealIconText = { text = "Heal", loc = "TOP", x = 50, y = -94, fontSize = 14},
+		SS_InstancedpsIconText = { text = "Dps", loc = "TOP", x = 175, y = -94, fontSize = 14},
+		SS_InstancetankBigIcon = { loc = "TOP", x = -75, y = -50, width = "48", height = "48", texture = SS_TankTexture},
+		SS_InstancehealBigIcon = { loc = "TOP", x = 50, y = -50, width = "48", height = "48", texture = SS_HealTexture},
+		SS_InstancedpsBigIcon = { loc = "TOP", x = 175, y = -50, width = "48", height = "48", texture = SS_DpsTexture},
+		SS_InstanceRandomDungeonText = { text = "|cffff0000Random Dungeons|r", loc = "TOP", x = 0, y = -119, fontSize = 14},
 		-- Dungeons
-		SS_InstanceTrigger = { y = -135, loc = "TOP", x = 0, width = "0", height = "2", texture = SS_Spacer},
+		SS_InstanceTrigger = { y = -85, loc = "TOP", x = 0, width = "0", height = "2", texture = SS_Spacer},
 	};
 };	
 
@@ -171,17 +171,17 @@ function SS_interfaceConfig(update)
 				SS_RegisterFrame("Button", i, var.parent, tVar.width, tVar.height, tVar.loc, tVar.x, tVar.y, tVar.texture)
 			elseif string.find(i, "InstanceTrigger") then
 				local storedMap = "Random Dungeons";
-				local ycoord = -155
+				local ycoord = -140
 				for k=1, #SS_sortedDungeonsID do
-					local boxes = {-150,0,150}
+					local boxes = {-75,50,175}
 					local nameVar = ("SS_" .. string.gsub(SS_sortedDungeonsID[k].name, " ", ""))
 					local mapVar = ("SS_" .. string.gsub(SS_sortedDungeonsID[k].mapName, " ", "") .. "HeaderText")
 					local spacerVar = string.gsub(storedMap, " ", "");
 					nameVar = string.gsub(nameVar, "'", "")
 					if string.find(SS_sortedDungeonsID[k].name, "Heroic") and SS_sortedDungeonsID[k].mapName == "Random Dungeons" then
-						SS_RegisterText(nameVar.."Text", var.parent, 14, "TOPLEFT", 10, -155, SS_sortedDungeonsID[k].name..":")
+						SS_RegisterText(nameVar.."Text", var.parent, 14, "TOPLEFT", 10, -138, SS_sortedDungeonsID[k].name..":")
 						for j = 1, 3 do
-							SS_RegisterBox(nameVar.."Box"..j, var.parent, "TOP", boxes[j], -150, SS_sortedDungeonsID[k].locked, SS_sortedDungeonsID[k].tooltip)
+							SS_RegisterBox(nameVar.."Box"..j, var.parent, "TOP", boxes[j], -135, SS_sortedDungeonsID[k].locked, SS_sortedDungeonsID[k].tooltip)
 						end
 					else
 						if not (SS_sortedDungeonsID[k].mapName == storedMap) then

@@ -10,7 +10,7 @@ function SS_DungeonSorter()
 		local id, name, mapName = dgInfo[1], dgInfo[2], dgInfo[20];		
 		local _, _, _, minLevel, maxLevel, _, _, _, expansionLevel, _, _, difficulty, _,_, isHoliday, _, _, isTimewalk = GetLFGDungeonInfo(id);
 		local key = {id = id, name = name, mapName = "Random Dungeons", difficulty = difficulty, timewalking = isTimewalk}
-		if(myLevel >= minLevel and myLevel <= maxLevel and EXPANSION_LEVEL >= expansionLevel and (difficulty == 2 or isTimewalk)) then
+		if(myLevel >= minLevel and myLevel <= maxLevel and EXPANSION_LEVEL >= expansionLevel and (difficulty == 1 or difficulty == 2 or isTimewalk)) then
 			tinsert(SS_dungeonsbyID, key)
 		end
 	end
@@ -59,6 +59,9 @@ function SS_DungeonSorter()
 		end
 		if(SS_sortedDungeonsID[i].difficulty == 2 and not SS_sortedDungeonsID[i].timewalking) then
 			SS_sortedDungeonsID[i].name = "Random Heroic";
+		end
+		if(SS_sortedDungeonsID[i].difficulty == 1 and not SS_sortedDungeonsID[i].timewalking) then
+			SS_sortedDungeonsID[i].name = "Random Normal";
 		end
 	end
 end
