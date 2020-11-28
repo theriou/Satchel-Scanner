@@ -179,7 +179,7 @@ function SS_interfaceConfig(update)
 					local spacerVar = string.gsub(storedMap, " ", "");
 					nameVar = string.gsub(nameVar, "'", "")
 					if string.find(SS_sortedDungeonsID[k].name, "Heroic") and SS_sortedDungeonsID[k].mapName == "Random Dungeons" then
-						SS_RegisterText(nameVar.."Text", var.parent, 14, "TOPLEFT", 10, -138, SS_sortedDungeonsID[k].name..":")
+						SS_RegisterText(nameVar.."Text", var.parent, 14, "TOPLEFT", 10, -140, SS_sortedDungeonsID[k].name..":")
 						for j = 1, 3 do
 							SS_RegisterBox(nameVar.."Box"..j, var.parent, "TOP", boxes[j], -135, SS_sortedDungeonsID[k].locked, SS_sortedDungeonsID[k].tooltip)
 						end
