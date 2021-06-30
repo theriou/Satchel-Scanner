@@ -15,7 +15,7 @@ SS_InstanceNewsTable = {
 SS_optionsTable2 = {
 	[1] = { parent = "main", pname = "Satchel Scanner", frame = "SS_ScannerMain",
 		SS_TextHeader = { loc = "TOP", x = 0, y = -5, fontSize = 28, text = "|cFF0080FFSatchel Scanner|r"},
-		SS_TextSubHeader = { loc = "TOP", x = 0, y = -30, fontSize = 14, text = "Created by Exzu-Aszune"},
+		SS_TextSubHeader = { loc = "TOP", x = 0, y = -30, fontSize = 14, text = "Created by Exzu-Aszune, updated by Theriou"},
 		SS_aboutText1 = { loc = "TOP", x = 0, y = -55, fontSize = 24, text = "|cffff0000Questions and Answers|r"},
 		SS_aboutTextQ1 = { loc = "TOPLEFT", x = 10, y = -84, fontSize = 16, text = "|cFF0080FFQ: Why does it list a satchel as available when there's nothing shown in the LFG window?|r"},
 		SS_aboutTextA1 = { loc = "TOPLEFT", x = 10, y = -100, fontSize = 16, text = "A: This may be because you're in a group. You will have to leave your group to view available rewards."},
