@@ -1,8 +1,8 @@
-## Interface: 90100
+## Interface: 90105
 ## Title: |cFF0080FFSatchelScanner|r
 ## Notes: Scans for Satchels found within the LFD/LFR frame.
-## Version: 9.1.0
-## Author: Exzu, Theriou
+## Version: 9.1.5
+## Authors: Exzu, Theriou
 ## SavedVariablesPerCharacter: SatchelScannerDB
 ## X-Github: https://github.com/theriou/Satchel-Scanner-WoW
 

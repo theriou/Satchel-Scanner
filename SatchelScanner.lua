@@ -362,7 +362,7 @@ function SatchelScanner_OnEvent(self, event, arg)
 	if event == "ADDON_LOADED" and arg == "SatchelScanner" then
 		SS_Globals = {dungeonData = {}, frameText = {}, panelText = {}};
 		SS_NotifcationTable = {};
-		SS_printmm("Welcome to Satchel Scanner v"..SS_addonVersion.."-"..SS_versionTag.."!");
+		SS_printmm("Satchel Scanner v"..SS_addonVersion);
 		SS_printmm("->> Type /ss3 for commands!");
 		SS_Loaded = true;
 	elseif event == "CHAT_MSG_LOOT" and not (MailFrame:IsShown() or TradeFrame:IsShown()) then
