@@ -4,7 +4,7 @@
 --     MAINFRAME & SCANNER    --
 --------------------------------
 -- Satchel IDs
-SS_SatchelIDs = {id_160054=0,id_140591=0,id_128803=0,id_90818=0,id_120334=0,id_69903=0}
+SS_SatchelIDs = {id_160054=0,id_140591=0,id_128803=0,id_90818=0,id_120334=0,id_69903=0,id_184522=0}
 
 -- Hardcoded textures
 SS_Spacer = "Interface\\Addons\\SatchelScanner\\textures\\hr.tga";
@@ -26,7 +26,7 @@ SS_CloseButton = "Interface\\Addons\\SatchelScanner\\textures\\close.tga";
 
 -- Variables
 local running = false;
-SS_addonVersion = 9.1;
+SS_addonVersion = 9.2;
 SS_versionTag = "Release";
 SS_TimeSinceLastNotification = 0;
 
