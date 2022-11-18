@@ -134,10 +134,10 @@ function SS_RegisterFrame(frame, var, parent, width, height, loc, x, y, texture,
 	if texture then
 		SS_Globals[var]:SetNormalTexture(texture)
 	end
-	if string.find(var, "Spacer") then
-		SS_Globals[var]:SetWidth(InterfaceOptionsFramePanelContainer:GetWidth() - 20);
-		SS_Globals[var]:SetAlpha(0.5);
-	elseif string.find(var, "Button") then
+	--if string.find(var, "Spacer") then
+	--	SS_Globals[var]:SetWidth(InterfaceOptionsFramePanelContainer:GetWidth() - 20);
+	--	SS_Globals[var]:SetAlpha(0.5);
+	if string.find(var, "Button") then
 		SS_Globals[var]:SetHitRectInsets(0, 0, 0, 0);
 		SS_Globals[var].tooltip = tooltip;
 	end
