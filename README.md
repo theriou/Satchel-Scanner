@@ -41,4 +41,4 @@ If there is a satchel for (Tank/Healer/Dps) from Instance X it will notify you w
 
 
 
-Old Outdated Version: https://www.curseforge.com/wow/addons/satchel-scanner
+Original Version: https://www.curseforge.com/wow/addons/satchel-scanner
