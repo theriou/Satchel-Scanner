@@ -1,4 +1,4 @@
-# Satchel-Scanner-WoW
+# Satchel-Scanner
 Back in the end of 2011 Blizzard implemented a feature known as "Call to Arms". This was introduced to reduce waiting times inside the Dungeon Finder by handing out a reward to certain specializations.
 
 The reward for when there was an shortage of i.e Tanks or Healers, would be a "Satchel". Given to the specialization if they signed up and completed the dungeon. These Satchels contains appropriate loot for the current expansion. Gold, items, etc.
