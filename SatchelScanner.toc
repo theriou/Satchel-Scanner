@@ -5,6 +5,7 @@
 ## Authors: Exzu, Theriou
 ## SavedVariablesPerCharacter: SatchelScannerDB
 ## X-Github: https://github.com/theriou/Satchel-Scanner-WoW
+## X-Wago-ID: QKyw97N7
 
 SatchelScanner.lua
 SS_config.lua
