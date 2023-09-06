@@ -26,7 +26,7 @@ SS_CloseButton = "Interface\\Addons\\SatchelScanner\\textures\\close.tga";
 
 -- Variables
 local running = false;
-SS_addonVersion = 10.15;
+SS_addonVersion = 10.17;
 SS_versionTag = "Release";
 SS_TimeSinceLastNotification = 0;
 
