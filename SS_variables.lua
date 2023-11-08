@@ -2,7 +2,7 @@ SS_savedVariables = {
 	-- {"savedvar", defaultValue, "valueinherit"}
 	SS_ScannerInterval = {"scantimer", 5, "SS_ScannerIntervalSlider"},
 	SS_NotificationInterval = {"notificationtimer", 10, "SS_NotificationIntervalSlider"},
-	SS_addonVersion = {"version", 10.17},
+	SS_addonVersion = {"version", 10.20},
 	SS_satchelsReceived = {"satchels", 0},
 	SS_showUI = {"showMainFrame", true},
 	-- Buttons
