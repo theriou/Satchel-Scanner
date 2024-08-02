@@ -31,7 +31,7 @@ SS_optionsTable2 = {
 		SS_Spacer3 = { loc = "TOP", x = 0, y = -200, width = "0" , height = "2", texture = SS_Spacer},
 		SS_Spacer4 = { loc = "TOP", x = 0, y = -240, width = "0" , height = "2", texture = SS_Spacer},
 	};
-	[2] = { parent = "options", pname = "Options", frame = "SS_ScannerOptions",
+	[2] = { parent = "main", pname = "Options", frame = "SS_ScannerOptions",
 		SS_optionsTextHeader = { fontSize = 24, loc = "TOP", x = 0, y = -5, text = "|cFF0080FFSatchel Scanner|r"},
 		SS_optionsTextSubHeader = { fontSize = 18, loc = "TOP", x = 0, y = -25, text = "|cffff0000Scanner Options|r"},
 		SS_Spacer5 = { loc = "TOP", x = 0, y = -45, width = "0" , height = "2", texture = SS_Spacer},
@@ -64,7 +64,7 @@ SS_optionsTable2 = {
 		SS_CompleteLFROnceButton = { loc = "TOPLEFT", x = 228, y = -105, tooltip = "Only scan for LFR-Wings you haven't completed this week"},
 		SS_CompleteLFGOnceButton = { loc = "TOPLEFT", x = 228, y = -125, tooltip = "Only scan for LFGs you haven't completed today (This includes Timewalking)"},
 	};
-	[3] = { parent = "instances", pname = "Instances", frame = "SS_ScannerInstances",
+	[3] = { parent = "main", pname = "Instances", frame = "SS_ScannerInstances",
 		SS_InstanceSpacer10 = { loc = "TOP", x = 0, y = -45, width = "0" , height = "2", texture = SS_Spacer},
 		SS_InstanceSpacer11 = { loc = "TOP", x = 0, y = -114, width = "0" , height = "2", texture = SS_Spacer},
 		SS_InstanceTextHeader = { fontSize = 24, loc = "TOP", x = 0, y = -5, text = "|cFF0080FFSatchel Scanner|r"},
