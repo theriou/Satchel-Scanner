@@ -145,14 +145,20 @@ function SS_interfaceConfig(update)
 		if page == 1 then
 			SS_Globals[var.parent] = CreateFrame("Frame", var.frame, UIParent, BackdropTemplateMixin and "BackdropTemplate");
 			SS_Globals[var.parent].okay = function(self) SS_datacall("update"); SS_UpdateChildFrame(); end;
+			category, layout = Settings.RegisterCanvasLayoutCategory(SS_Globals[var.parent], SS_optionsTable2[page].pname);
+			category.ID = SS_Globals[var.parent].pname;
+			Settings.RegisterAddOnCategory(category);
 		else
 			SS_Globals[var.parent] = CreateFrame("Frame", var.frame, SS_Globals.main, BackdropTemplateMixin and "BackdropTemplate");
 			SS_Globals[var.parent].parent = SS_Globals.main.name;
+			category = Settings.GetCategory(SS_Globals[var.parent].parent)
+			subcategory, layout = Settings.RegisterCanvasLayoutSubcategory(category, SS_Globals[var.parent], SS_optionsTable2[page].pname)
+			subcategory.ID = SS_Globals[var.parent].pname;
+			Settings.RegisterAddOnCategory(subcategory)
 		end
 		SS_Globals[var.parent].name = var.pname;
 		SS_Globals[var.parent]:SetBackdrop(SS_optionsPanelBackdrop);
 		SS_Globals[var.parent]:SetBackdropColor(0, 0, 0, 0.8);
-		InterfaceOptions_AddCategory(SS_Globals[var.parent]);
 		for i, tVar in pairs(var) do
 			if string.find(i, "Text") then
 				SS_RegisterText(i, var.parent, tVar.fontSize, tVar.loc, tVar.x, tVar.y, tVar.text)
@@ -179,6 +185,13 @@ function SS_interfaceConfig(update)
 						SS_RegisterText(nameVar.."Text", var.parent, 14, "TOPLEFT", 10, -140, SS_sortedDungeonsID[k].name..":")
 						for j = 1, 3 do
 							SS_RegisterBox(nameVar.."Box"..j, var.parent, "TOP", boxes[j], -135, SS_sortedDungeonsID[k].locked, SS_sortedDungeonsID[k].tooltip)
+							if SS_sortedDungeonsID[k].locked and j == 3 then
+								if SS_InstanceNewsTable[nameVar] then
+									SS_RegisterText(nameVar.."LockedText", var.parent, 14, "TOPLEFT", 21, -4, SS_InstanceNewsTable[nameVar], SS_Globals.dungeonData[nameVar.."Box"..j]);
+								else
+									SS_RegisterText(nameVar.."LockedText", var.parent, 14, "TOPLEFT", 21, -4, SS_sortedDungeonsID[k].reason, SS_Globals.dungeonData[nameVar.."Box"..j])
+								end
+							end
 						end
 					else
 						if not (SS_sortedDungeonsID[k].mapName == storedMap) then

@@ -7,10 +7,11 @@ function SS_DungeonSorter()
 	local found;
 	for i = 1, GetNumRandomDungeons() do
 		local dgInfo = { GetLFGRandomDungeonInfo(i) };
-		local id, name, mapName = dgInfo[1], dgInfo[2], dgInfo[20];		
+		local id, name, mapName = dgInfo[1], dgInfo[2], dgInfo[20];
+		local _, _, hideIfUnmet = IsLFGDungeonJoinable(id);
 		local _, _, _, minLevel, maxLevel, _, _, _, expansionLevel, _, _, difficulty, _,_, isHoliday, _, _, isTimewalk = GetLFGDungeonInfo(id);
 		local key = {id = id, name = name, mapName = "Random Dungeons", difficulty = difficulty, timewalking = isTimewalk}
-		if(myLevel >= minLevel and myLevel <= maxLevel and myLevel >= (maxLevel - 10) and EXPANSION_LEVEL >= expansionLevel and (difficulty >= 1 or isTimewalk)) then
+		if(myLevel >= minLevel and myLevel <= maxLevel and myLevel >= (maxLevel - 10) and EXPANSION_LEVEL >= expansionLevel and not hideIfUnmet) then
 			tinsert(SS_dungeonsbyID, key)
 		end
 	end
@@ -56,12 +57,6 @@ function SS_DungeonSorter()
 				local key = {id = 0, name = "Timewalking", mapName = "Random Dungeons", locked = true, tooltip = "Not available this reset.", reason = "Not active"}
 				tinsert(SS_sortedDungeonsID, 2, key)
 			end
-		end
-		if(SS_sortedDungeonsID[i].difficulty == 2 and not SS_sortedDungeonsID[i].timewalking) then
-			SS_sortedDungeonsID[i].name = "Random Heroic";
-		end
-		if(SS_sortedDungeonsID[i].difficulty == 1 and not SS_sortedDungeonsID[i].timewalking) then
-			SS_sortedDungeonsID[i].name = "Random Normal";
 		end
 	end
 end

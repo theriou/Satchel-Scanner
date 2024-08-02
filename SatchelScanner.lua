@@ -26,7 +26,7 @@ SS_CloseButton = "Interface\\Addons\\SatchelScanner\\textures\\close.tga";
 
 -- Variables
 local running = false;
-SS_addonVersion = 1025.0;
+SS_addonVersion = 1100.0;
 SS_versionTag = "Release";
 SS_TimeSinceLastNotification = 0;
 
@@ -41,6 +41,8 @@ local greenColor = {0,1,0,1};
 local yellowColor = {1,1,0,1};
 local whiteColor = {1,1,1,1};
 local SS_Loaded = false;
+
+local category, layout;
 
 SS_ChildFrameTable = {
 	[1] = { x = 5,
@@ -64,7 +66,7 @@ SS_CoreFrameTable = {
 	SS_HeaderText = { loc = "TOP", x = 0, y = 8, fontSize = "14", color = {1, 1, 1, 1}, text = "Satchel Scanner", },
 	SS_SubHeaderText = { loc = "TOPLEFT", x = 5, y = -5, fontSize = "16", color = {0, 1, 0, 1}, text = "Current Status:", },
 	SS_SubHeaderText2 = { loc = "TOPLEFT", x = 95, y = -5, fontSize = "16", color = {1, 0, 0, 1}, text = "Not Running", },
-	SS_configButton = { loc = "TOP", x = 97, y = -5, width = "16", height = "16", functionName = "InterfaceOptionsFrame_OpenToCategory(SS_Globals.options)", texture = SS_ConfigButton, pushedTxt = SS_ConfigButtonPush, highLightTxt = SS_highlightSmallUI},
+	SS_configButton = { loc = "TOP", x = 97, y = -5, width = "16", height = "16", functionName = "Settings.OpenToCategory(category.ID)", texture = SS_ConfigButton, pushedTxt = SS_ConfigButtonPush, highLightTxt = SS_highlightSmallUI},
 	SS_closeButton = { loc = "TOP", x = 115, y = -5, width = "16", height = "16", functionName = "SS_hideMainFrame()", texture = SS_CloseButton, pushedTxt = SS_CloseButtonPush, highLightTxt = SS_highlightSmallUI},
 	SS_HeaderSpacertexture = { loc = "TOP", x = 0, y = -23, width = "0" , height = "2", texture = SS_Spacer},
 	SS_bagIcontexture = { loc = "TOP", x = 79, y = -5, width = "16", height = "16", texture = SS_BagIcon},
@@ -312,6 +314,7 @@ function SS_startScanning()
 		SS_UpdateChildFrame();
 		RequestLFDPlayerLockInfo();
 		SS_printmm("Started Scanning!");
+		SS_datacall("update");
 	end
 end
 
@@ -322,6 +325,7 @@ function SS_stopScanning()
 		SS_SubHeaderText2:SetTextColor(unpack(redColor));
 		SS_UpdateChildFrame();
 		SS_printmm("Stopped Scanning!")
+		SS_datacall("update");
 	end
 end
 
@@ -430,9 +434,9 @@ function SatchelScanner_OnLoad(self)
 				end
 			end
 		elseif msg == "config" then
-			InterfaceOptionsFrame_OpenToCategory(SS_Globals.options);
+			Settings.OpenToCategory(category.ID)
 		elseif msg == "faq" then
-			InterfaceOptionsFrame_OpenToCategory(SS_Globals.main);
+			Settings.OpenToCategory(category.ID)
 		else
 			print("|cffffffff========== |cFF0080FFSatchel Scanner |cffffffff==========|r");
 			SS_printmm("->> Use '/ss3 toggle' to show/hide the frame");

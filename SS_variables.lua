@@ -2,7 +2,7 @@ SS_savedVariables = {
 	-- {"savedvar", defaultValue, "valueinherit"}
 	SS_ScannerInterval = {"scantimer", 5, "SS_ScannerIntervalSlider"},
 	SS_NotificationInterval = {"notificationtimer", 10, "SS_NotificationIntervalSlider"},
-	SS_addonVersion = {"version", 1025.0},
+	SS_addonVersion = {"version", 1100.0},
 	SS_satchelsReceived = {"satchels", 0},
 	SS_showUI = {"showMainFrame", true},
 	-- Buttons
@@ -29,6 +29,7 @@ function SS_datacall(data)
 			if string.find(var[1], "satchels") and not (_G[var[1]] == nil) then
 				SatchelScannerDB[var[1]] = _G[i];
 			elseif string.find(i, "MainFrameLoc") then
+				SatchelScannerDisplayWindow:ClearAllPoints();
 				SatchelScannerDisplayWindow:SetPoint("TOPLEFT", 200, -400);
 				SatchelScannerDB[i] = {SatchelScannerDisplayWindow:GetPoint();}
 			elseif string.find(i, "Instance_Trigger") then
