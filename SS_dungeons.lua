@@ -58,5 +58,11 @@ function SS_DungeonSorter()
 				tinsert(SS_sortedDungeonsID, 2, key)
 			end
 		end
+		if(SS_sortedDungeonsID[i].difficulty == 2 and not SS_sortedDungeonsID[i].timewalking) then
+			SS_sortedDungeonsID[i].name = "Random Heroic";
+		end
+		if(SS_sortedDungeonsID[i].difficulty == 1 and not SS_sortedDungeonsID[i].timewalking) then
+			SS_sortedDungeonsID[i].name = "Random Normal";
+		end
 	end
 end
