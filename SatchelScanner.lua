@@ -4,7 +4,7 @@
 --     MAINFRAME & SCANNER    --
 --------------------------------
 -- Satchel IDs
-SS_SatchelIDs = {id_160054=0,id_140591=0,id_128803=0,id_90818=0,id_120334=0,id_69903=0,id_184522=0,id_201326=0}
+SS_SatchelIDs = {id_160054=0,id_140591=0,id_128803=0,id_90818=0,id_120334=0,id_69903=0,id_184522=0,id_201326=0,id_224573=0}
 
 -- Hardcoded textures
 SS_Spacer = "Interface\\Addons\\SatchelScanner\\textures\\hr.tga";
@@ -16,7 +16,6 @@ SS_DpsIcon = "Interface\\Addons\\SatchelScanner\\textures\\dpsIcon.tga";
 SS_StartButton = "Interface\\Buttons\\UI-Panel-Button-Up.blp";
 SS_StopButton = "Interface\\Buttons\\UI-Panel-Button-Up.blp";
 SS_preFont = "Interface\\Addons\\SatchelScanner\\fonts\\font.TTF";
---SS_preFont = "Fonts\\FRIZQT__.ttf";
 SS_highlightSmallUI = "Interface\\Buttons\\UI-Panel-MinimizeButton-Highlight.blp";
 SS_hightlightMediumUI = "Interface\\Buttons\\UI-Panel-Button-Highlight.png";
 SS_ConfigButtonPush = "Interface\\Addons\\SatchelScanner\\textures\\configpush.tga";
@@ -26,7 +25,7 @@ SS_CloseButton = "Interface\\Addons\\SatchelScanner\\textures\\close.tga";
 
 -- Variables
 local running = false;
-SS_addonVersion = 1102.0;
+SS_addonVersion = 1102.1;
 SS_versionTag = "Release";
 SS_TimeSinceLastNotification = 0;
 
