@@ -25,7 +25,7 @@ SS_CloseButton = "Interface\\Addons\\SatchelScanner\\textures\\close.tga";
 
 -- Variables
 local running = false;
-SS_addonVersion = 1105.0;
+SS_addonVersion = 1107.0;
 SS_versionTag = "Release";
 SS_TimeSinceLastNotification = 0;
 
@@ -303,6 +303,10 @@ function SS_SetupCoreFrame() -- Will be used for minimalist option later.
 	end
 	SS_datacall("read");
 	SS_UpdateChildFrame();
+	--Check for Auto Scan now that addon ui is loaded
+	if SS_Globals.SS_autoScan then
+		SS_startScanning();
+	end
 end
 
 function SS_startScanning()
@@ -313,8 +317,8 @@ function SS_startScanning()
 		SS_UpdateChildFrame();
 		RequestLFDPlayerLockInfo();
 		SS_printmm("Started Scanning!");
-		SS_datacall("update");
 	end
+	SS_datacall("update");
 end
 
 function SS_stopScanning()
@@ -324,8 +328,8 @@ function SS_stopScanning()
 		SS_SubHeaderText2:SetTextColor(unpack(redColor));
 		SS_UpdateChildFrame();
 		SS_printmm("Stopped Scanning!")
-		SS_datacall("update");
 	end
+	SS_datacall("update");
 end
 
 function SS_hideMainFrame()

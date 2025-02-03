@@ -2,7 +2,7 @@ SS_savedVariables = {
 	-- {"savedvar", defaultValue, "valueinherit"}
 	SS_ScannerInterval = {"scantimer", 5, "SS_ScannerIntervalSlider"},
 	SS_NotificationInterval = {"notificationtimer", 10, "SS_NotificationIntervalSlider"},
-	SS_addonVersion = {"version", 1105.0},
+	SS_addonVersion = {"version", 1107.0},
 	SS_satchelsReceived = {"satchels", 0},
 	SS_showUI = {"showMainFrame", true},
 	-- Buttons
@@ -14,6 +14,7 @@ SS_savedVariables = {
 	SS_CompleteLFROnce = {"LFROnce", false, "SS_CompleteLFROnceButton"},
 	SS_CompleteLFGOnce = {"LFGOnce", false, "SS_CompleteLFGOnceButton"},
 	SS_playSound = {"sounds", true, "SS_playSoundButton"},
+	SS_autoScan = {"autoScan", false, "SS_autoScanButton"},
 	MainFrameLoc = {""},
 	Instance_Trigger = {"InstanceTrigger"},
 };
