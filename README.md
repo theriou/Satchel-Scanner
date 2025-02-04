@@ -21,8 +21,8 @@ If there is a satchel for (Tank/Healer/Dps) from Instance X it will notify you w
 
     Once the addon is open:
 
-    Press 'Start' to start scanning and 'Stop' to stop scanning
-    Pressing X will hide the frame and you will have to show it again by using /ss3 toggle
+    Press 'Start' to start scanning and 'Stop' to stop scanning (these buttons make the addon save the options/instance).
+    Pressing X will hide the frame and you will have to show it again by using /ss3 toggle.
     The addon still scans while being hidden, if a satchel is found the Main window will show itself.
 
     Options
@@ -35,9 +35,10 @@ If there is a satchel for (Tank/Healer/Dps) from Instance X it will notify you w
         Show an Raid Warning when a Satchel is found.
         Scan while inside an instance, allows you to find satchels while inside an instance or pause while you're inside it.
         Scan while in group, allows you to find satchels while in an group that are usually hidden by default while in a group.
-        Change the scanner interval (How often the scanner checks the Dungeon Finder/Raid Finder if there is an Call to Arms)
+        Change the scanner interval (How often the scanner checks the Dungeon Finder/Raid Finder if there is an Call to Arms).
         Choose between scanning for either, Tank, Healer or Dps.
         Choose multiple dungeons and raids.
+        Auto Scan automatically starts scanning right after the addon loads.
 
 
 
