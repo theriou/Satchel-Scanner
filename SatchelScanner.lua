@@ -4,7 +4,7 @@
 --     MAINFRAME & SCANNER    --
 --------------------------------
 -- Satchel IDs
-SS_SatchelIDs = {id_160054=0,id_140591=0,id_128803=0,id_90818=0,id_120334=0,id_69903=0,id_184522=0,id_201326=0,id_224573=0}
+SS_SatchelIDs = {id_160054=0,id_140591=0,id_128803=0,id_90818=0,id_120334=0,id_69903=0,id_184522=0,id_201326=0,id_224573=0,id_259086=0}
 
 -- Hardcoded textures
 SS_Spacer = "Interface\\Addons\\SatchelScanner\\textures\\hr.tga";
@@ -25,7 +25,7 @@ SS_CloseButton = "Interface\\Addons\\SatchelScanner\\textures\\close.tga";
 
 -- Variables
 local running = false;
-SS_addonVersion = 1200.0;
+SS_addonVersion = 1201.0;
 SS_versionTag = "Release";
 SS_TimeSinceLastNotification = 0;
 
@@ -374,7 +374,7 @@ function SatchelScanner_OnEvent(self, event, arg)
 		SS_Loaded = true;
 	elseif event == "CHAT_MSG_LOOT" and not (MailFrame:IsShown() or TradeFrame:IsShown()) then
 		local loot = string.match(arg, "item:(%d+):");
-		if(loot) then	
+		if (loot) then	
 			if(SS_SatchelIDs["id_"..loot]) then	
 				SS_satchelsReceived = SS_satchelsReceived + 1;
 				SS_bagCounterText:SetText(SS_satchelsReceived);
