@@ -15,7 +15,7 @@ SS_HealerIcon = "Interface\\Addons\\SatchelScanner\\textures\\healerIcon.tga";
 SS_DpsIcon = "Interface\\Addons\\SatchelScanner\\textures\\dpsIcon.tga";
 SS_StartButton = "Interface\\Buttons\\UI-Panel-Button-Up.blp";
 SS_StopButton = "Interface\\Buttons\\UI-Panel-Button-Up.blp";
-SS_preFont = "Interface\\Addons\\SatchelScanner\\fonts\\font.TTF";
+SS_preFont = "Interface\\Addons\\SatchelScanner\\fonts\\font.ttf";
 SS_highlightSmallUI = "Interface\\Buttons\\UI-Panel-MinimizeButton-Highlight.blp";
 SS_hightlightMediumUI = "Interface\\Buttons\\UI-Panel-Button-Highlight.png";
 SS_ConfigButtonPush = "Interface\\Addons\\SatchelScanner\\textures\\configpush.tga";
@@ -25,7 +25,7 @@ SS_CloseButton = "Interface\\Addons\\SatchelScanner\\textures\\close.tga";
 
 -- Variables
 local running = false;
-SS_addonVersion = 1201.0;
+SS_addonVersion = 1207.0;
 SS_versionTag = "Release";
 SS_TimeSinceLastNotification = 0;
 
@@ -62,14 +62,14 @@ SS_ChildFrameTable = {
 };
 
 SS_CoreFrameTable = {
-	SS_HeaderText = { loc = "TOP", x = 0, y = 8, fontSize = "14", color = {1, 1, 1, 1}, text = "Satchel Scanner", },
-	SS_SubHeaderText = { loc = "TOPLEFT", x = 5, y = -5, fontSize = "16", color = {0, 1, 0, 1}, text = "Current Status:", },
-	SS_SubHeaderText2 = { loc = "TOPLEFT", x = 95, y = -5, fontSize = "16", color = {1, 0, 0, 1}, text = "Not Running", },
+	SS_HeaderText = { loc = "TOP", x = 0, y = 8, fontSize = 14, color = {1, 1, 1, 1}, text = "Satchel Scanner", },
+	SS_SubHeaderText = { loc = "TOPLEFT", x = 5, y = -5, fontSize = 16, color = {0, 1, 0, 1}, text = "Current Status:", },
+	SS_SubHeaderText2 = { loc = "TOPLEFT", x = 95, y = -5, fontSize = 16, color = {1, 0, 0, 1}, text = "Not Running", },
 	SS_configButton = { loc = "TOP", x = 97, y = -5, width = "16", height = "16", functionName = "Settings.OpenToCategory(category.ID)", texture = SS_ConfigButton, pushedTxt = SS_ConfigButtonPush, highLightTxt = SS_highlightSmallUI},
 	SS_closeButton = { loc = "TOP", x = 115, y = -5, width = "16", height = "16", functionName = "SS_hideMainFrame()", texture = SS_CloseButton, pushedTxt = SS_CloseButtonPush, highLightTxt = SS_highlightSmallUI},
 	SS_HeaderSpacertexture = { loc = "TOP", x = 0, y = -23, width = "0" , height = "2", texture = SS_Spacer},
 	SS_bagIcontexture = { loc = "TOP", x = 79, y = -5, width = "16", height = "16", texture = SS_BagIcon},
-	SS_bagCounterText = { loc = "TOP", x = 60, y = -7, fontSize = "14", color = {0, 0.6, 0.8, 1}, text = "0"},
+	SS_bagCounterText = { loc = "TOP", x = 60, y = -7, fontSize = 14, color = {0, 0.6, 0.8, 1}, text = "0"},
 	SS_startButton = { loc = "BOTTOM", x = -85, y = 5, text = "Start", yscale = 22/32, xscale = 80/130, width = "80", height = "25", functionName = "SS_startScanning()", texture = SS_StartButton, pushedTxt = "Interface\\Buttons\\UI-Panel-Button-Down.blp", highLightTxt = SS_hightlightMediumUI},
 	SS_stopButton = { loc = "BOTTOM", x = 85, y = 5, text = "Stop", yscale = 22/32, xscale = 80/130, width = "80", height = "25", functionName = "SS_stopScanning()", texture = SS_StopButton, pushedTxt = "Interface\\Buttons\\UI-Panel-Button-Down.blp", highLightTxt = SS_hightlightMediumUI},
 };
