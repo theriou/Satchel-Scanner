@@ -24,6 +24,9 @@ function SS_DungeonSorter()
 		if(myLevel >= minLevel and myLevel <= maxLevel and EXPANSION_LEVEL >= expansionLevel and not hideIfUnmet) then
 			tinsert(SS_dungeonsbyID, key);
 		end
+		if(myLevel >= minLevel and myLevel <= maxLevel and EXPANSION_LEVEL >= expansionLevel and mapName == "Sporefall") then
+			tinsert(SS_dungeonsbyID, key);
+		end
 	end
 	while #SS_dungeonsbyID > #SS_sortedDungeonsID do
 		local tmp, key, j = 0;
