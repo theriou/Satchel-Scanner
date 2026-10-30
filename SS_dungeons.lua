@@ -8,23 +8,20 @@ function SS_DungeonSorter()
 	for i = 1, GetNumRandomDungeons() do
 		local dgInfo = { GetLFGRandomDungeonInfo(i) };
 		local id, name, mapName = dgInfo[1], dgInfo[2], dgInfo[20];
-		local _, _, hideIfUnmet = IsLFGDungeonJoinable(id);
+		local isAvailableAll, isAvailablePlayer, hideIfNotJoinable, totalGroupSizeRequired = IsLFGDungeonJoinable(id);
 		local _, _, _, minLevel, maxLevel, _, _, _, expansionLevel, _, _, difficulty, _,_, isHoliday, _, _, isTimewalk = GetLFGDungeonInfo(id);
 		local key = {id = id, name = name, mapName = "Random Dungeons", difficulty = difficulty, timewalking = isTimewalk}
-		if(myLevel >= minLevel and myLevel <= maxLevel and myLevel >= (maxLevel - 10) and EXPANSION_LEVEL >= expansionLevel and not hideIfUnmet) then
+		if(myLevel >= minLevel and myLevel <= maxLevel and EXPANSION_LEVEL >= expansionLevel and not hideIfNotJoinable) then
 			tinsert(SS_dungeonsbyID, key)
 		end
 	end
 	for i=1, GetNumRFDungeons() do
 		local dgInfo = { GetRFDungeonInfo(i) };
 		local id, name, mapName = dgInfo[1], dgInfo[2], dgInfo[20];
-		local _, _, hideIfUnmet = IsLFGDungeonJoinable(id);
+		local isAvailableAll, isAvailablePlayer, hideIfNotJoinable, totalGroupSizeRequired = IsLFGDungeonJoinable(id);
 		local _, typeID, subtypeID, minLevel, maxLevel, _, _, _, expansionLevel, _, _, difficulty = GetLFGDungeonInfo(id);
 		local key = {id = id, name = name, mapName = mapName, difficulty=difficulty}
-		if(myLevel >= minLevel and myLevel <= maxLevel and EXPANSION_LEVEL >= expansionLevel and not hideIfUnmet) then
-			tinsert(SS_dungeonsbyID, key);
-		end
-		if(myLevel >= minLevel and myLevel <= maxLevel and EXPANSION_LEVEL >= expansionLevel and mapName == "Sporefall") then
+		if(myLevel >= minLevel and myLevel <= maxLevel and EXPANSION_LEVEL == expansionLevel) then
 			tinsert(SS_dungeonsbyID, key);
 		end
 	end
